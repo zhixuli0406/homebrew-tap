@@ -1,32 +1,28 @@
 class Duduclaw < Formula
-  desc "Multi-Agent AI Assistant Platform"
+  desc "Multi-Agent AI Assistant Platform powered by Claude Code"
   homepage "https://github.com/zhixuli0406/DuDuClaw"
-  url "https://github.com/zhixuli0406/DuDuClaw.git", tag: "v0.4.0"
-  version "0.4.0"
+  version "0.5.0"
   license "MIT"
 
-  head "https://github.com/zhixuli0406/DuDuClaw.git", branch: "main"
+  on_macos do
+    on_arm do
+      url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.5.0/duduclaw-v0.5.0-aarch64-apple-darwin.tar.gz"
+      sha256 "5bf0f694a8bcb9850f0c86c86db667daa00f71618036dc7527d767b042bc170a"
+    end
+  end
 
-  depends_on "rust" => :build
-  depends_on "node" => :build
-  depends_on "python@3.12"
+  depends_on "python@3.12" => :recommended
 
   def install
-    cd "web" do
-      system "npm", "ci", "--legacy-peer-deps"
-      system "npm", "run", "build"
-    end
-
-    system "cargo", "build", "--release", "-p", "duduclaw-cli",
-           "-p", "duduclaw-gateway", "--features", "duduclaw-gateway/dashboard"
-    bin.install "target/release/duduclaw"
+    bin.install "duduclaw"
   end
 
   def post_install
-    ohai "Run `duduclaw onboard` to set up your AI assistant"
+    ohai "Run `duduclaw onboard` to configure your API key and create your first agent"
+    ohai "Then run `duduclaw run` to start the gateway"
   end
 
   test do
-    assert_match "duduclaw", shell_output("#{bin}/duduclaw version")
+    assert_match version.to_s, shell_output("#{bin}/duduclaw --version")
   end
 end
