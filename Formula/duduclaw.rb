@@ -1,12 +1,11 @@
 class Duduclaw < Formula
-  desc "Multi-Agent AI Assistant Platform powered by Claude Code"
+  desc "Claude Code Extension Layer — multi-channel AI agent orchestration"
   homepage "https://github.com/zhixuli0406/DuDuClaw"
-  version "0.5.1"
+  version "0.6.0"
   license "MIT"
 
-  # Pre-built Apple Silicon (arm64) binary
-  url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.5.1/duduclaw-v0.5.1-aarch64-apple-darwin.tar.gz"
-  sha256 "e462760385163cc0c2f65153eb113d4c39fd3fc5f1590fd2a442d715c0631f78"
+  url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.6.0/duduclaw-v0.6.0-aarch64-apple-darwin.tar.gz"
+  sha256 "21e673529006646e09c469d5f070b04663ff3626b03ce25f843a7acc3eb06d41"
 
   depends_on :macos
   depends_on "python@3.12" => :recommended
@@ -18,6 +17,7 @@ class Duduclaw < Formula
   def post_install
     ohai "Run `duduclaw onboard` to configure your API key and create your first agent"
     ohai "Then run `duduclaw run` to start the gateway"
+    ohai "New in v0.6.0: `duduclaw test <agent>` for red-team security testing"
   end
 
   test do
