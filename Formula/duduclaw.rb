@@ -1,23 +1,17 @@
 class Duduclaw < Formula
   desc "Claude Code Extension Layer — multi-channel AI agent orchestration"
   homepage "https://github.com/zhixuli0406/DuDuClaw"
-  version "0.6.2"
+  version "0.6.3"
   license "MIT"
 
-  url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.6.2/duduclaw-v0.6.2-aarch64-apple-darwin.tar.gz"
-  sha256 "0327a1dcd0474a8224c8e36d2f13e1f8ba95a1fc8495c233fe7dcd8694caa5c7"
+  url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.6.3/duduclaw-v0.6.3-aarch64-apple-darwin.tar.gz"
+  sha256 "28c5f17a8ca73254f6fa366dbc0274a61b1928f78637e730b54055960389b4d5"
 
   depends_on :macos
   depends_on "python@3.12" => :recommended
 
   def install
     bin.install "duduclaw"
-  end
-
-  def post_install
-    ohai "Run `duduclaw onboard` to configure your API key and create your first agent"
-    ohai "Then run `duduclaw run` to start the gateway"
-    ohai "New: Odoo ERP integration — add [odoo] section to config.toml"
   end
 
   test do
