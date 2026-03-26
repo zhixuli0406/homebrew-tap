@@ -5,7 +5,7 @@ class Duduclaw < Formula
   license "MIT"
 
   url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.6.6/duduclaw-v0.6.6-aarch64-apple-darwin.tar.gz"
-  sha256 "958a2939c6179ef261dec8d96301a6183299fdb22fe909194cfb04e4ecc8a621"
+  sha256 "4819a8dbada6cc4b330fb9520dad97cce81e8b867c8f3adf941654dbbdf10c79"
 
   depends_on :macos
   depends_on "python@3.12" => :recommended
