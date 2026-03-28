@@ -1,17 +1,28 @@
 class Duduclaw < Formula
-  desc "Claude Code Extension Layer — multi-channel AI agent orchestration"
+  desc "Claude Code Extension Layer — multi-channel AI agent orchestration with local LLM inference"
   homepage "https://github.com/zhixuli0406/DuDuClaw"
-  version "0.6.6"
+  version "0.7.0"
   license "MIT"
 
-  url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.6.6/duduclaw-v0.6.6-aarch64-apple-darwin.tar.gz"
-  sha256 "f1532eb5c3553996727d3c6406b39204bdce093aee4e98efc529f7409b951fb8"
+  url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.7.0/duduclaw-v0.7.0-aarch64-apple-darwin.tar.gz"
+  sha256 "UPDATE_SHA256_AFTER_RELEASE_BUILD"
 
   depends_on :macos
   depends_on "python@3.12" => :recommended
 
   def install
     bin.install "duduclaw"
+  end
+
+  def caveats
+    <<~EOS
+      To enable local LLM inference:
+        1. Place GGUF models in ~/.duduclaw/models/
+        2. Copy inference.toml.example to ~/.duduclaw/inference.toml
+        3. Set `enabled = true` in inference.toml
+
+      Run `duduclaw onboard` to set up your AI assistant.
+    EOS
   end
 
   test do
