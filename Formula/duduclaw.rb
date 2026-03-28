@@ -1,11 +1,11 @@
 class Duduclaw < Formula
   desc "Claude Code Extension Layer — multi-channel AI agent orchestration with local LLM inference"
   homepage "https://github.com/zhixuli0406/DuDuClaw"
-  version "0.8.9"
+  version "0.8.10"
   license "MIT"
 
-  url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.8.9/duduclaw-v0.8.9-aarch64-apple-darwin.tar.gz"
-  sha256 "02e7490f6948930b3d2d1d06dfc40a8f72e0ebd2a4c8760719d6b0d442e192b0"
+  url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.8.10/duduclaw-v0.8.10-aarch64-apple-darwin.tar.gz"
+  sha256 "550d718ace4525b80935bcf99be19bf80bedab3aa099bd0d877a6cd718f88574"
 
   depends_on :macos
   depends_on "python@3.12" => :recommended
