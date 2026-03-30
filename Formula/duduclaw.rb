@@ -5,7 +5,7 @@ class Duduclaw < Formula
   license "Elastic-2.0"
 
   url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v0.9.5/duduclaw-v0.9.5-arm64-apple-darwin.tar.gz"
-  sha256 "17e26a97268b3fa63619d106076e66e531500b5b57bd9795da9f0f5270bf1e71"
+  sha256 "0619850eeab62b967e6adcffc7ed533cd282b031eebc3cbb7f54e6e6da5a17c4"
 
   depends_on :macos
   depends_on "python@3.12" => :recommended
