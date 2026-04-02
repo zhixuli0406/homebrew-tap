@@ -24,7 +24,7 @@ class Duduclaw < Formula
 
   def caveats
     <<~EOS
-      🐾 DuDuClaw v1.0.0 — Claude Code Extension Layer
+      🐾 DuDuClaw v#{version} — Claude Code Extension Layer
 
       Quick start:
         duduclaw onboard    # Interactive setup wizard
