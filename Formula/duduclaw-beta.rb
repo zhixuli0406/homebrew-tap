@@ -1,5 +1,5 @@
 class DuduclawBeta < Formula
-  desc "Claude Code Extension Layer — v1.2.0-beta.1 (prediction hardening + embedding)"
+  desc "Claude Code Extension Layer — v1.2.0-beta.1 (per-agent bots + prediction hardening)"
   homepage "https://github.com/zhixuli0406/DuDuClaw"
   version "1.2.0-beta.1"
   license "Elastic-2.0"
@@ -26,9 +26,11 @@ class DuduclawBeta < Formula
 
   def caveats
     <<~EOS
-      DuDuClaw v1.2.0-beta.1 — Prediction Engine Hardening
+      DuDuClaw v1.2.0-beta.1
 
       New in this beta:
+        - Per-agent Discord/Telegram/Slack bot support
+        - Per-agent channel config & removal from dashboard
         - FeedbackSeverity grading (replaces binary correction counting)
         - Vocabulary novelty fallback (Tier 2 topic detection)
         - Evolution event logging (Sutskever Day 1 principle)
