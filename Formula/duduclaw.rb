@@ -4,7 +4,7 @@ class Duduclaw < Formula
   version "1.3.0"
   license "Apache-2.0"
 
-  url "https://github.com/zhixuli0406/DuDuClaw.git", tag: "v1.3.0"
+  url "https://github.com/zhixuli0406/DuDuClaw.git", tag: "v1.3.0", revision: "a03e4fa3f4e695903278e2912c32c0d8ec28a54d"
 
   depends_on "rust" => :build
   depends_on "node" => :build
