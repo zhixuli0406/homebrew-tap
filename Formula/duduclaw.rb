@@ -17,6 +17,7 @@ class Duduclaw < Formula
       system "npm", "run", "build"
     end
 
+    ENV["DUDUCLAW_LICENSE_PUBKEY_HEX"] = "1aab166201a0598f00cebae2149af361cbb024862567ec21ff97fe2dd31fda5d"
     system "cargo", "build", "--release", "-p", "duduclaw-cli",
            "-p", "duduclaw-gateway", "--features", "duduclaw-gateway/dashboard"
     bin.install "target/release/duduclaw"
