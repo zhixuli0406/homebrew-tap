@@ -7,10 +7,10 @@ class DuduclawPro < Formula
   # Pre-built binary from public release repo (source is in private repo)
   if Hardware::CPU.arm?
     url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-aarch64-apple-darwin"
-    sha256 "PLACEHOLDER_ARM64_SHA256"
+    sha256 "bdab615351408cc6e5d47e1285a7c618292c0ce9ce03daae81754f35999434a0"
   else
     url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-x86_64-apple-darwin"
-    sha256 "PLACEHOLDER_X64_SHA256"
+    sha256 "bdab615351408cc6e5d47e1285a7c618292c0ce9ce03daae81754f35999434a0"
   end
 
   depends_on :macos
