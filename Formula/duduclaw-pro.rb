@@ -1,16 +1,16 @@
 class DuduclawPro < Formula
   desc "DuDuClaw Pro — Commercial AI agent orchestration with industry templates & adaptive evolution"
   homepage "https://github.com/zhixuli0406/duduclaw-pro-releases"
-  version "1.4.9"
+  version "1.4.11"
   license :cannot_represent
 
   # Pre-built tarball from public release repo (binary + Python SDK)
   if Hardware::CPU.arm?
     url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-aarch64-apple-darwin.tar.gz"
-    sha256 "$SHA_ARM64"
+    sha256 "8914b64230a3ee86e16d4cd703c25e0f8ba11d6d6fe7272f4b412ac3fcf44bcc"
   else
     url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-x86_64-apple-darwin.tar.gz"
-    sha256 "$SHA_X64"
+    sha256 "b97ee95ae6553d0346fac7d8b1879233420881a034f18b05891374ea3dd8838e"
   end
 
   depends_on :macos
@@ -28,7 +28,7 @@ class DuduclawPro < Formula
 
   def caveats
     <<~EOS
-      🐾 DuDuClaw Pro v#{version}
+      DuDuClaw Pro v#{version}
 
       Without a license, Pro runs in Community mode (all core features, no limits).
 
