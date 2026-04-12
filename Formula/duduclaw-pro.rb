@@ -4,13 +4,13 @@ class DuduclawPro < Formula
   version "1.4.4"
   license :cannot_represent
 
-  # Pre-built binary from public release repo (source is in private repo)
+  # Pre-built tarball from public release repo (binary + Python SDK)
   if Hardware::CPU.arm?
-    url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-aarch64-apple-darwin"
-    sha256 "b348816f0e888dbd40eaf0bde7bbcddc37b61355b81def7a879e48df88471042"
+    url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-aarch64-apple-darwin.tar.gz"
+    sha256 "REPLACE_AFTER_NEXT_RELEASE"
   else
-    url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-x86_64-apple-darwin"
-    sha256 "d50d6a4ba5078cbabeb4138fadf226a854c1fbc51b5552f364237fad7a970fd7"
+    url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-x86_64-apple-darwin.tar.gz"
+    sha256 "REPLACE_AFTER_NEXT_RELEASE"
   end
 
   depends_on :macos
@@ -22,6 +22,8 @@ class DuduclawPro < Formula
   def install
     binary = Hardware::CPU.arm? ? "duduclaw-pro-aarch64-apple-darwin" : "duduclaw-pro-x86_64-apple-darwin"
     bin.install binary => "duduclaw-pro"
+    # Python SDK — required for evolution vetter & SDK chat fallback
+    (libexec/"python").install "python/duduclaw" if (buildpath/"python/duduclaw").exist?
   end
 
   def caveats
