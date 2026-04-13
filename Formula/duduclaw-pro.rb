@@ -1,16 +1,16 @@
 class DuduclawPro < Formula
   desc "DuDuClaw Pro — Commercial AI agent orchestration with industry templates & adaptive evolution"
   homepage "https://github.com/zhixuli0406/duduclaw-pro-releases"
-  version "1.4.11"
+  version "1.4.12"
   license :cannot_represent
 
   # Pre-built tarball from public release repo (binary + Python SDK)
   if Hardware::CPU.arm?
     url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-aarch64-apple-darwin.tar.gz"
-    sha256 "8914b64230a3ee86e16d4cd703c25e0f8ba11d6d6fe7272f4b412ac3fcf44bcc"
+    sha256 "0599822ab90f55f76b208b595ccf8b45aaaf7fd8917d46bdfbe71f59e5ccc03f"
   else
     url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-x86_64-apple-darwin.tar.gz"
-    sha256 "b97ee95ae6553d0346fac7d8b1879233420881a034f18b05891374ea3dd8838e"
+    sha256 "2126dfc821bb1fb9bff0974351df09d1f0ead10276123650df3351ada1b5cc17"
   end
 
   depends_on :macos
