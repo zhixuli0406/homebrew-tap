@@ -1,10 +1,10 @@
 class Duduclaw < Formula
   desc "Claude Code Extension Layer — multi-channel AI agent orchestration with local LLM inference"
   homepage "https://github.com/zhixuli0406/DuDuClaw"
-  version "1.3.22"
+  version "1.4.27"
   license "Apache-2.0"
 
-  url "https://github.com/zhixuli0406/DuDuClaw.git", tag: "v1.3.22", revision: "3069aa3019b6eda0077d9efb605c54f6c1adc921"
+  url "https://github.com/zhixuli0406/DuDuClaw.git", tag: "v1.4.27", revision: "a75fee6d23fde93cd2aded9fcf763551ec601e2c"
 
   depends_on "rust" => :build
   depends_on "node" => :build
@@ -21,6 +21,7 @@ class Duduclaw < Formula
     system "cargo", "build", "--release", "-p", "duduclaw-cli",
            "-p", "duduclaw-gateway", "--features", "duduclaw-gateway/dashboard"
     bin.install "target/release/duduclaw"
+    (libexec/"python").install Dir["python/duduclaw"]
   end
 
   def caveats
