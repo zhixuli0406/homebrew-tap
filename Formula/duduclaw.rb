@@ -1,10 +1,10 @@
 class Duduclaw < Formula
   desc "Claude Code Extension Layer — multi-channel AI agent orchestration with local LLM inference"
   homepage "https://github.com/zhixuli0406/DuDuClaw"
-  version "1.4.29"
+  version "1.4.30"
   license "Apache-2.0"
 
-  url "https://github.com/zhixuli0406/DuDuClaw.git", tag: "v1.4.29", revision: "b4ba57d4794a7e5901f13a7a1a781a08b67a1961"
+  url "https://github.com/zhixuli0406/DuDuClaw.git", tag: "v1.4.30", revision: "95aa410dad997a492ee62d7ecc56be4251601e13"
 
   depends_on "rust" => :build
   depends_on "node" => :build
