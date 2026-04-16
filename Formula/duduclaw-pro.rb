@@ -1,7 +1,7 @@
 class DuduclawPro < Formula
   desc "DuDuClaw Pro — Commercial AI agent orchestration with industry templates & adaptive evolution"
   homepage "https://github.com/zhixuli0406/duduclaw-pro-releases"
-  version "1.4.27"
+  version "1.4.29"
   license :cannot_represent
 
   # Pre-built tarball from public release repo (binary + Python SDK)
