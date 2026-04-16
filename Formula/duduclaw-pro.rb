@@ -7,10 +7,10 @@ class DuduclawPro < Formula
   # Pre-built tarball from public release repo (binary + Python SDK)
   if Hardware::CPU.arm?
     url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-aarch64-apple-darwin.tar.gz"
-    sha256 "86cad0043e012e02304b16844df258f1c8a50dc52d9db8ea6e462bc1cd1bc671"
+    sha256 "423979446339b11cf530178133628005a7bd7f49612bfd82fd048f84f73efb64"
   else
     url "https://github.com/zhixuli0406/duduclaw-pro-releases/releases/download/v#{version}/duduclaw-pro-x86_64-apple-darwin.tar.gz"
-    sha256 "53825039c972b724b54c59f4518bd4c6746dccaf016dee46a8da28d083f9aac6"
+    sha256 "8a2d8930b3e6d2f231ede0b4e51653e51d0e9ebba4809866f32a9aa1be454ddf"
   end
 
   depends_on :macos
