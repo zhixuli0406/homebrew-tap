@@ -1,41 +1,33 @@
 class Duduclaw < Formula
   desc "Claude Code Extension Layer — multi-channel AI agent orchestration with local LLM inference"
   homepage "https://github.com/zhixuli0406/DuDuClaw"
-  version "1.8.4"
+  version "1.8.5"
   license "Apache-2.0"
-
-  url "https://github.com/zhixuli0406/DuDuClaw.git", tag: "v1.8.4", revision: "f46600992cbfdbeb4fac43322b2947a7bb392ae7"
-
+  url "https://github.com/zhixuli0406/DuDuClaw.git", tag: "v1.8.5", revision: "689aebf378a3dfb544ca4e2af3483676975aa5dc"
   depends_on "rust" => :build
   depends_on "node" => :build
   depends_on :macos
   depends_on "python@3.12" => :recommended
-
   def install
     cd "web" do
       system "npm", "ci", "--legacy-peer-deps"
       system "npm", "run", "build"
     end
-
     ENV["DUDUCLAW_LICENSE_PUBKEY_HEX"] = "1aab166201a0598f00cebae2149af361cbb024862567ec21ff97fe2dd31fda5d"
     system "cargo", "build", "--release", "-p", "duduclaw-cli",
            "-p", "duduclaw-gateway", "--features", "duduclaw-gateway/dashboard"
     bin.install "target/release/duduclaw"
     (libexec/"python").install Dir["python/duduclaw"]
   end
-
   def caveats
     <<~EOS
       DuDuClaw v#{version}
-
       Quick start:
-        duduclaw onboard    # Interactive setup wizard
-        duduclaw run         # Start gateway + channels
-
+        duduclaw onboard
+        duduclaw run
       Dashboard: http://localhost:18789
     EOS
   end
-
   test do
     assert_match version.to_s, shell_output("#{bin}/duduclaw version")
   end
