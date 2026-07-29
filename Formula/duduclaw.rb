@@ -1,7 +1,7 @@
 class Duduclaw < Formula
   desc "Multi-Runtime AI Agent Platform — channels, memory, evolution, local LLM"
   homepage "https://github.com/zhixuli0406/DuDuClaw"
-  version "1.46.2"
+  version "1.46.3"
   license "Apache-2.0"
 
   # Prebuilt release tarballs (binary + Python SDK) — no source build.
@@ -9,20 +9,20 @@ class Duduclaw < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v#{version}/duduclaw-darwin-arm64.tar.gz"
-      sha256 "df198571aacb38798f572ddd2ed8f4364cdd4a85d4c4debd8c269388b12c7587"
+      sha256 "64580236c8b2213eed6b6c14877842efeb33315157f01f2c5ff4e806e981cbbf"
     else
       url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v#{version}/duduclaw-darwin-x64.tar.gz"
-      sha256 "cf8f03e1e4b57d25f085e21b6fdcd44a75f1e994b0eff292ef92aaa6313eb43c"
+      sha256 "3e7ae6e73224f12d069a5e1dd0a526a9cacbdbb332a8fcce31c67a81623bcf93"
     end
   end
 
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v#{version}/duduclaw-linux-arm64.tar.gz"
-      sha256 "944b16557a67d86b0bd396e34bbee44d3a28bd9baf3373a09a429189736f70b9"
+      sha256 "326a2f795e6eb26ec1b31da27192f224e7a04e4f1062b2743a65e9af7a633068"
     else
       url "https://github.com/zhixuli0406/DuDuClaw/releases/download/v#{version}/duduclaw-linux-x64.tar.gz"
-      sha256 "20c5a69743f875aed76aae25fa9c5b50fc07b755566125869d5a89e7d8486cc4"
+      sha256 "cc2978ae7639c6b58e7c2cdc6c345b07325f02617f59da3a56747faece815d5a"
     end
   end
 
